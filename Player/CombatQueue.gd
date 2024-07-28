@@ -19,7 +19,7 @@ func _ready():
 
 func _process(delta):
     if (wait_for_next_attack):
-        if (combat_queue.size() === 0):
+        if (combat_queue.size() == 0):
             wait_for_next_attack = false
         else:
             time += delta
@@ -33,7 +33,7 @@ func append_new_move(combat_move):
     if (combat_queue.size() > max_queue_moves):
         return
 
-    if (combat_queue.size() === 0):
+    if (combat_queue.size() == 0):
         wait_for_next_attack = true
 
     combat_queue.append(combat_move)
